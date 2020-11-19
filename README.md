@@ -23,8 +23,11 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 
 ## Versionado 📌
+Actual: 1.01.02
+* [Bugfix] 0001 = Redireccion de login y register al home de la web generaba errores
+           Se cambian las rutas.
 
-Versión en ejecución: 1.01.01
+Versión: 1.01.01
   **Alta Baja y Modificación de bomberos**
 
 ## Autores ✒️
