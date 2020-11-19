@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        App\Providers\ProviderFederaciones::class,
+        App\Providers\ProviderFunciones::class,
+        App\Providers\ProviderGrados::class,
+        App\Providers\ProviderCuarteles::class,
+        App\Providers\ProviderRoles::class,
+
     ],
 
     /*
@@ -226,7 +232,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Federaciones' => App\Http\Helpers\HelperFederaciones::class,
+        'Funciones' => App\Http\Helpers\HelperFunciones::class,
+        'Grados' => App\Http\Helpers\HelperGrados::class,
+        'Cuarteles' => App\Http\Helpers\HelperCuarteles::class,
+        'Roles' => App\Http\Helpers\HelperRoles::class,
     ],
 
 ];

@@ -15,8 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(['verified','auth','usuarios', 'cuartel' ])->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes(['verify' => true]);
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//ingreso fed
+Route::post('/federacion', 'ControllerFederaciones@setFederacion')->name('federaciones');
+Route::get('/federacion/dashboard/{federacion?}', 'ControllerFederaciones@federacionDashboard')->name('federaciones.dashboard');
+//bomberos
+Route::get('/federacion/bomberos', 'ControllerBomberos@indexBomberos')->name('bomberos');
+Route::post('/federacion/bomberos/bomero/{id?}', 'ControllerBomberos@getBombero')->name('bomberos.bombero');
+Route::post('/federacion/bomberos/guardar', 'ControllerBomberos@saveBomberos')->name('bomberos.save');
+
